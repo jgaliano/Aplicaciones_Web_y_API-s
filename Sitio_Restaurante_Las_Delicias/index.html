@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/pedidos.css">
+    <title>Restaurante Las Delicias</title>
+</head>
+<body>
+    <section class="workspace">
+        <section class="seccion_inicial">
+            <section class="section_1">
+            RESTAURANTE
+            </section>
+            <section class="section_1">
+    
+            </section>
+            <section class="section_1">
+               LAS DELICIAS
+            </section>
+        </section>
+        <section class="seccion_secundaria">
+            <section class="section_2">
+                AGREGAR COMIDA
+            </section>
+        </section>
+        <section class="seccion_tercera">
+            <section id="inv1" class="section_3_1" onclick="selectDesayuno()">
+                DESAYUNO
+            </section>
+            <section id="inv2" class="section_3_2" onclick="selectAlmuerzo()">
+                ALMUERZOS
+            </section>
+            <section id="inv3" class="section_3_3" onclick="selectCena()">
+                CENAS
+            </section>
+            <section class="section_3" style="background-color: rgb(72, 35, 25); color: black;">
+                <ion-icon name="cart-outline" style="height: 35px; width: 35px; color: white;"></ion-icon>
+            </section>
+        </section>
+        <section class="bloque_central">
+            <section class="contenedorProdcutos"></section>
+            <section class="contenedorVerCarrito">
+                <section id="cabezera-carrito"></section>
+                <section id="contador-carrito" style="color: white;"></section>
+                
+                <section id="ver-carrito" style="padding-bottom: 50;"></section><BR></BR>
+                <section id="precio-total-carrito"></section>
+            </section>
+        </section>
+    </section>
+    <script src="/js/script_function.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
