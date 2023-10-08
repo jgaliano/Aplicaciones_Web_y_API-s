@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API_Rick_And_Morty</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1{
+            text-align: center;
+        }
+        
+        main{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .image-container{
+            display: flex;
+        }
+
+        .image-container img{
+            width: 100%;
+        }
+        article{
+            padding: 10px;
+            box-shadow: 0px 0px 1px #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Personajes</h1>
+    <main>
+        
+    </main>
+    <script>
+    function getCharacters(done){
+        const resoults = fetch("https://rickandmortyapi.com/api/character");
+        resoults
+            .then(response => response.json())
+            .then(data => {
+                done(data)
+            });
+    }
+    getCharacters(data => {
+        data.results.forEach(personaje => {
+            const article = document.createRange().createContextualFragment(/*html*/
+            `<article>
+                <div class="image-container">
+                    <img src="${personaje.image}" alt="Personaje">
+                </div>
+                <h2>${personaje.name}</h2>
+                <span>${personaje.status}</span>
+            </article>`
+            );
+
+            const main = document.querySelector("main");
+            main.append(article);
+        });
+    });
+    </script>
+</body>
+</html>
